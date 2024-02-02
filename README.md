@@ -12,7 +12,7 @@ something better.
 So here is the openscad script to generate an stl file. When slicing, fill it
 100% to prevent breaking. There's some forces involved when spinning yarn.
 
-[image](preview.png)
+![image](./preview.png)
 
 You need to balance the flight with M6/M7washers and M7 nuts. Being a tower
 model, any unbalance in the top will be amplified on the floor. Your neighbours
