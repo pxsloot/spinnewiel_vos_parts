@@ -12,6 +12,8 @@ something better.
 So here is the openscad script to generate an stl file. When slicing, fill it
 100% to prevent breaking. There's some forces involved when spinning yarn.
 
+[image](preview.png)
+
 You need to balance the flight with M6/M7washers and M7 nuts. Being a tower
 model, any unbalance in the top will be amplified on the floor. Your neighbours
 will notify you if you forget.  Think 90's harddisk in top of your maxi tower
@@ -24,7 +26,7 @@ Yarn ring size can be adjusted with variable 'ring_id'
 # generate STL file
 
 ```
-  $ openscad -o spinnewiel_oog.stl spinnewiel_oog.scad
+  $ make
 ```
 
 # bc script to figure out what's what with triangles and parallels
