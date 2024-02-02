@@ -34,7 +34,7 @@ Yarn ring size can be adjusted with variable 'ring_id'
 I adapted some code from https://unixwars.blogspot.com/2016/03/joining-two-circlescylinders-in.html
 and used below bc script to get things right.
 
-![Maths][maths.png]
+![Maths](maths.png)
 
 ```bc
 define asin(x) {
