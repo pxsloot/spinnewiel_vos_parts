@@ -76,7 +76,7 @@ module outline() {
     r1 = bus_od/2;
     r2 = ring_od/2;
 
-    alpha = asin((r2-r1)/(r2+r1));
+    alpha = asin((r2-r1)/(c2c));
     x1 = r1*sin(alpha);
     y1 = r1*cos(alpha);
     x2 = c2c-r2*sin(alpha);
