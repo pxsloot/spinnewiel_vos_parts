@@ -2,12 +2,11 @@
 
 Designer Sebastiaan Vos had his own ideas about spinning wheels and designed
 and built a tower model spinning wheel stripped to its essence, with a few
-clever details that show Vos really understands the craft of fiber spinning.
+clever details.
 
-I found my own VO&S in a kringloop, with only one bobbin and random bits of
-hardware for leading the yarn along the flight. After a short while things
-started breaking and ergonomics wheren't great and it became apparent that I
-needed to come up with something better.
+I found my own VO&S in a kringloop, with only one bobbin. The flight had random
+bits of hardware for leading the yarn on the bobbin. After a short while things
+started breaking and ergonomics wheren't great so I came up with this.
 
 So here is the openscad script to generate an stl file. Use 100% infill when
 printing to make the part more robust. There's some forces involved when
