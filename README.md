@@ -1,4 +1,4 @@
-# Eyelet for VO&S spinningwheel
+# Parts for VO&S spinningwheel
 
 Designer Sebastiaan Vos had his own ideas about spinning wheels and designed
 and built a tower model spinning wheel stripped to its essence, with a few
@@ -23,11 +23,18 @@ weights between 2 eyelets.
 Thickness can be adjusted with variable 'hoogte'
 Yarn ring size can be adjusted with variable 'ring_id'
 
-## bushing to keep balance weights in place
+## part to keep balance weights in place
 
 Obviously based on the eyelet.
 
-![bushing preview](./preview_klem.png)
+![part preview](./preview_klem.png)
+
+## bushing for double drive
+
+A mystery part was missing from the double drive. According to the
+measurements it could have been something like this
+
+![as preview](./preview_as.png)
 
 # generate STL files
 
