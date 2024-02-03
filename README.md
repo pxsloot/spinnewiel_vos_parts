@@ -12,7 +12,7 @@ something better.
 So here is the openscad script to generate an stl file. When slicing, fill it
 100% to prevent breaking. There's some forces involved when spinning yarn.
 
-![eyelet preview](./preview.png)
+![eyelet preview](./preview_oog.png)
 
 You need to balance the flight with M6/M7washers and M7 nuts. Being a tower
 model, any unbalance in the top will be amplified on the floor. Your neighbours
@@ -23,7 +23,13 @@ between 2 eyelets.
 Thickness can be adjusted with variable 'hoogte'
 Yarn ring size can be adjusted with variable 'ring_id'
 
-# generate STL file
+## bushing to keep balance weights in place
+
+Obviously based on the eyelet.
+
+![bushing preview](./preview_klem.png)
+
+# generate STL files
 
 ```
   $ make
@@ -59,9 +65,7 @@ c2c = (bus_od+ring_od)/2
 r1 = bus_od/2
 r2 = ring_od/2
 
-a1 = c2c*r2/(r2 - r1)
-alpha = asin(r2/a1)
-#    alpha = asin((r2+r1)/(r2-r1))
+alpha = asin((r2-r1)/c2c)
 x1 = r1*s(alpha)
 y1 = r1*c(alpha)
 x2 = c2c-r2*s(alpha)

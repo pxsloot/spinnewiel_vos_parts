@@ -1,12 +1,18 @@
 .PHONY: all clean
 
-all: preview.png spinnewiel_oog.stl
+all: preview_oog.png preview_klem.png spinnewiel_vos_oog.stl spinnewiel_vos_klem.stl
 
 clean:
-	rm *.png *.stl
+	rm *.stl
 
-preview.png: spinnewiel_oog.scad
-	openscad -o preview.png spinnewiel_oog.scad
+preview_klem.png: spinnewiel_vos_klem.scad
+	openscad -o preview_klem.png spinnewiel_vos_klem.scad
 
-spinnewiel_oog.stl: spinnewiel_oog.scad
-	openscad -o spinnewiel_oog.stl spinnewiel_oog.scad
+preview_oog.png: spinnewiel_vos_oog.scad
+	openscad -o preview_oog.png spinnewiel_vos_oog.scad
+
+spinnewiel_vos_klem.stl: spinnewiel_vos_klem.scad
+	openscad -o spinnewiel_vos_klem.stl spinnewiel_vos_klem.scad
+
+spinnewiel_vos_oog.stl: spinnewiel_vos_oog.scad
+	openscad -o spinnewiel_vos_oog.stl spinnewiel_vos_oog.scad
