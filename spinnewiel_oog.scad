@@ -7,11 +7,11 @@
  You probably want to balance the flight with a few
  M7 washers and keep them in their place with 2 eyelets
 
- there are 2 modules, outline() and punchout()
- outline describes the outerform, punchout describes
- the holes to be punched out.
+ the 2 modules, outline() and punchout()
+ describe the outline of the part and the holes
+ to be punched out.
 
- Then punchout is subtracted from outline and the result
+ Punchout is then subtracted from outline and the result
  is given thickness.
 */
 
