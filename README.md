@@ -12,7 +12,7 @@ So here is the openscad script to generate an stl file. Use 100% infill when
 printing to make the part more robust. There's some forces involved when
 spinning yarn.
 
-![eyelet preview](./preview_oog.png)
+![eyelet preview](./spinnewiel_vos_oog.png)
 
 You need to balance the flight with M6/M7washers and M7 nuts. Being a tower
 model, any unbalance in the top will be amplified on the floor. Your neighbours
@@ -27,14 +27,14 @@ Yarn ring size can be adjusted with variable 'ring_id'
 
 Obviously based on the eyelet.
 
-![part preview](./preview_klem.png)
+![part preview](./spinnewiel_vos_klem.png)
 
 ## bushing for double drive
 
 A mystery part was missing from the double drive. According to the
 measurements it could have been something like this
 
-![as preview](./preview_as.png)
+![as preview](./spinnewiel_vos_as.png)
 
 # generate STL files
 
