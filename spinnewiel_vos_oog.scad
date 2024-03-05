@@ -1,11 +1,12 @@
 /*
 
  small part for a VO&S Spinnewiel:
- it's an eyelet to slide along the flight in
- order to collect the spun yarn on the bobbin
+ it's an eyelet to slide along the flight to
+ direct the spun yarn on the bobbin
 
  You probably want to balance the flight with a few
- M7 washers and keep them in their place with 2 eyelets
+ M8 washers and keep them in their place with an eyelet
+ and a bushing(?) (see spinnewiel_vos_klem.scad)
 
  the 2 modules, outline() and punchout()
  describe the outline of the part and the holes
