@@ -2,11 +2,12 @@
 
  small part for a VO&S Spinnewiel:
  it's an eyelet to slide along the flight to
- direct the spun yarn on the bobbin
+ direct the spun yarn on the bobbin.
+ You need 2, and a bushing.
 
  You probably want to balance the flight with a few
  M8 washers and keep them in their place with an eyelet
- and a bushing(?) (see spinnewiel_vos_klem.scad)
+ and a bushing (see spinnewiel_vos_klem.scad)
 
  the 2 modules, outline() and punchout()
  describe the outline of the part and the holes
@@ -20,21 +21,21 @@ $fn=90;
 
 // flight is 6.5mm with a .5mm flat edge ground
 // on one side. It keeps the eyelet straight
-vlucht_dia=6.5;
-vlucht_vlak=.5;
+flight_dia=6.5;
+flight_flat=.5;
 
-hoogte=4;
+thickness=4;
 
-// bus schuift over vlucht
-bus_dikte=3;
-bus_id=vlucht_dia;
-bus_od=bus_id+bus_dikte;
+// bus goes over flight
+bus_thickness=3;
+bus_id=flight_dia;
+bus_od=bus_id+bus_thickness;
 
 // define eye for the yarn
 // same as the the bus, but you can change it
-ring_dikte=bus_dikte;
+ring_thickness=bus_thickness;
 ring_id=15;
-ring_od=ring_id+ring_dikte;
+ring_od=ring_id+ring_thickness;
 
 // center 2 center is used so much it's
 // earned its own variable
@@ -42,7 +43,7 @@ c2c = (bus_od+ring_od)/2;
 
 // create the eyelet: lay down the outline, punch a few holes
 // and extrude it a bit
-linear_extrude(height=hoogte, center=false, convexity=10) {
+linear_extrude(height=thickness, center=false, convexity=10) {
     difference() {
         outline();
         punchout();
@@ -50,13 +51,12 @@ linear_extrude(height=hoogte, center=false, convexity=10) {
 }
 
 module punchout() {
-    // flight: vlucht
     intersection() {
-        circle(d=vlucht_dia);
+        circle(d=flight_dia);
         // the flight has a flat side to register
-        translate([vlucht_vlak,0])
+        translate([flight_flat,0])
             square(
-                [vlucht_dia-vlucht_vlak,vlucht_dia],
+                [flight_dia-flight_flat,flight_dia],
                 center=true);
     }
     // ring for the yarn
@@ -65,6 +65,18 @@ module punchout() {
 }
 
 module outline() {
+    hull() {
+        circle(d=bus_od);
+        translate([c2c,0])
+        circle(d=ring_od);
+    }
+}
+
+
+// old module to create an outline around the
+// two circles.
+// Before I found out about 'hull()' :-/
+module _outline() {
     circle(d=bus_od);
     translate([c2c,0])
         circle(d=ring_od);
