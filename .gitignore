@@ -1,2 +1,4 @@
 *.stl
 .*swp
+
+.DS_Store
