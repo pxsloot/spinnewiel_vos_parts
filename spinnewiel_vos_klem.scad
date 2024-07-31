@@ -1,11 +1,9 @@
 /*
 
  small part for a VO&S Spinnewiel:
- it's an eyelet to slide along the flight in
- order to collect the spun yarn on the bobbin
-
- You probably want to balance the flight with a few
- M7 washers and keep them in their place with 2 eyelets
+ it's an bushing to slide along the flight in
+ order to fix washers in place. Washers are needed to balance
+ the flight.
 
  the 2 modules, outline() and punchout()
  describe the outline of the part and the holes
@@ -19,19 +17,19 @@ $fn=90;
 
 // flight is 6.5mm with a .5mm flat edge ground
 // on one side. It keeps the eyelet straight
-vlucht_dia=6.5;
-vlucht_vlak=.5;
+flight_dia=6.5;
+flight_vlak=.5;
 
-hoogte=6;
+thickness=6;
 
-// bus schuift over vlucht
-bus_dikte=6;
-bus_id=vlucht_dia;
-bus_od=bus_id+bus_dikte;
+// bus goes over flight
+bus_thickness=6;
+bus_id=flight_dia;
+bus_od=bus_id+bus_thickness;
 
 // create the eyelet: lay down the outline, punch a few holes
 // and extrude it a bit
-linear_extrude(height=hoogte, center=false, convexity=10) {
+linear_extrude(height=thickness, center=false, convexity=10) {
     difference() {
         outline();
         punchout();
@@ -39,13 +37,12 @@ linear_extrude(height=hoogte, center=false, convexity=10) {
 }
 
 module punchout() {
-    // flight: vlucht
     intersection() {
-        circle(d=vlucht_dia);
+        circle(d=flight_dia);
         // the flight has a flat side to register
-        translate([vlucht_vlak,0])
+        translate([flight_vlak,0])
             square(
-                [vlucht_dia-vlucht_vlak,vlucht_dia],
+                [flight_dia-flight_vlak,flight_dia],
                 center=true);
     }
 }
