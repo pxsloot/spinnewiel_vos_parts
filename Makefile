@@ -7,7 +7,7 @@ all: $(objects)
 # $(objects): %.stl: %.scad
 
 clean:
-	rm *.stl
+	rm spinnewiel*.stl spinnewiel*.png
 
 %.png: %.scad
 	openscad -o $@ $<
