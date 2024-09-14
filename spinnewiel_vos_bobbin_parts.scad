@@ -22,13 +22,14 @@ module bobbin_axle() {
     height = axle_diameter - axle_min_width;
 
     r = 2*(4*(height*height) + (chord*chord))/(8 * height);
+//$fn=400;
 
     rotate_extrude()
         difference() {
             translate([axle_hole/2,-axle_length/2,0])
                 square([(axle_diameter - axle_hole)/2, axle_length]);
             translate([r + axle_min_width/2,(big_end - small_end)/2,0])
-                circle(r);
+                circle(r,$fn=200);
         }
 //    // TODO: notch
 //    cube([0,0,0], center=true);
@@ -56,6 +57,10 @@ module bobbin_pulley() {
             translate([pulley_width+pulley_r/2 + some_factor, 0,0])
                 rotate([0,0,45])
                     square(pulley_width, center=true);
+        }
+    for ( i = [1:10:360])
+        rotate(i,[0,0,1]){
+            translate([pulley_r - 4.5,0,0]) rotate([0,0,45]) cube(3, center=true);
         }
 }
 

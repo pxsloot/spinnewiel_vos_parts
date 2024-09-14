@@ -19,6 +19,12 @@ big_end = small_end + pulley_width;
 
 include <spinnewiel_vos_bobbin_parts.scad>;
 
-translate([70,0,small_end/2]) bobbin_end();
-translate([0,70,0]) bobbin_big_end();
-translate([0,0,axle_length/2]) bobbin_axle();
+//translate([70,0,small_end/2]) bobbin_end();
+//translate([0,70,0]) bobbin_big_end();
+//translate([0,0,axle_length/2]) bobbin_axle();
+
+
+// uncomment to build
+//bobbin_end();
+//bobbin_big_end();
+//bobbin_axle();
