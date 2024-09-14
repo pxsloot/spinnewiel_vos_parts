@@ -35,7 +35,7 @@ module bobbin_axle() {
 //    cube([0,0,0], center=true);
 }
 
-module bobbin_end() {
+module bobbin_small_end() {
     top_r = small_end/2;
     rotate_extrude()
         hull() {
@@ -66,9 +66,9 @@ module bobbin_pulley() {
 
 module bobbin_big_end() {
     translate([0,0,small_end+pulley_width/2-.5]) bobbin_pulley();
-    translate([0,0,small_end/2]) bobbin_end();
+    translate([0,0,small_end/2]) bobbin_small_end();
 }
 
-//translate([70,0,small_end/2]) bobbin_end();
+//translate([70,0,small_end/2]) bobbin_small_end();
 //translate([0,70,0]) bobbin_big_end();
 //translate([0,0,axle_length/2]) bobbin_axle();
