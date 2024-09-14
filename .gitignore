@@ -1,4 +1,5 @@
 *.stl
+*.stl.deps
 .*swp
 
 .DS_Store
