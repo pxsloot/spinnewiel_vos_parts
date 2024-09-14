@@ -1,6 +1,7 @@
 $fn = 90;
 
 // VO&S treadle plank fasteners
+// using the original screwholes and screws
 
 tube_radius = 8;
 screw_head_diameter = 6;
@@ -22,20 +23,22 @@ module outer_hull() {
     hull() {
         translate([screw_distance/2,0,0])
             cylinder(h=(hull_height), r=(screw_head_radius+h_clearance));
-    
+
         translate([-screw_distance/2,0,0])
             cylinder(h=(hull_height), r=(screw_head_radius+h_clearance));
     }
 }
 
+// could've put it in a module. meh
+// just build the thing
 difference() {
     outer_hull();
     // hole for screwhead to sit in
     translate([screw_distance/2,0,(screw_body_clearance)])
-            cylinder(h=100, r=(screw_head_radius+h_clearance/2));
+        cylinder(h=100, r=(screw_head_radius+h_clearance/2));
     // hole for other screwhead to sit in
     translate([-screw_distance/2,0,(screw_body_clearance)])
-            cylinder(h=100, r=(screw_head_radius+h_clearance/2));
+        cylinder(h=100, r=(screw_head_radius+h_clearance/2));
     // through hole for the screw
     translate([screw_distance/2,0,0])
         cylinder(h=200,r=screw_body_radius, center=true);
@@ -50,23 +53,8 @@ difference() {
     just_a_bit = .1;
     angle = 40;
     for ( i = [-angle:10:angle]) {
-            translate([-v_clearance,0,(tube_radius/2-just_a_bit)])
-                rotate([90,0,i])
-                    cube([tube_radius, tube_radius, 100], center=true);
-        
-//        hull() {
-//            translate([-v_clearance,0,(tube_radius/2-just_a_bit)])
-//                rotate([90,0,i])
-//                    cylinder(h=100, r=tube_radius/2, center=true);
-//            translate([-v_clearance,0,(tube_radius/4-just_a_bit)])
-//                rotate([90,0,i])
-//                    cube([tube_radius, tube_radius/2, 100], center=true);
-//            translate([v_clearance,0,(tube_radius/2-just_a_bit)])
-//                rotate([90,0,i])
-//                    cylinder(h=100, r=tube_radius/2, center=true);
-//            translate([v_clearance,0,(tube_radius/4-just_a_bit)])
-//                rotate([90,0,i])
-//                    cube([tube_radius, tube_radius/2, 100], center=true);
-//        }
+        translate([-v_clearance,0,(tube_radius/2-just_a_bit)])
+            rotate([90,0,i])
+                cube([tube_radius, tube_radius, 100], center=true);
     }
 }
