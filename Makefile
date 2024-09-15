@@ -6,7 +6,8 @@ objects = spinnewiel_vos_oog.png spinnewiel_vos_klem.png \
 		spinnewiel_vos_bobbin.png spinnewiel_vos_bobbin.stl \
 		spinnewiel_vos_bobbin_small_end.png spinnewiel_vos_bobbin_small_end.stl \
 		spinnewiel_vos_bobbin_big_end.png spinnewiel_vos_bobbin_big_end.stl \
-		spinnewiel_vos_bobbin_axle.png spinnewiel_vos_bobbin_axle.stl
+		spinnewiel_vos_bobbin_axle.png spinnewiel_vos_bobbin_axle.stl \
+		spinnewiel_vos_treadle_fastener.png spinnewiel_vos_treadle_fastener.stl
 
 all: $(objects)
 
